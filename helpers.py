@@ -37,17 +37,13 @@ def pdf_title_generator(manga_title, chapter_directory, is_using_humanized_chapt
     return result
 
 def pdf_file_generator(source_path, chapter_title):
-    res = []
+    result = []
 
-    # Iterate directory
     for path in os.listdir(source_path):
-        # check if current path is a file
         if os.path.isfile(os.path.join(source_path, path)):
             image = Image.open(source_path + path)
             img = image.convert('RGB')
-            res.append(img)
-    # print("All files: ")        
-    # print(res)
+            result.append(img)
 
     output_file = "output/" + chapter_title
-    res[0].save(output_file, save_all=True, append_images=res)
+    result[0].save(output_file, save_all=True, append_images=result)
