@@ -1,8 +1,8 @@
 # About
 Convert manga images into a single pdf. 
 
-_p/s: use [HakuNeko](https://github.com/manga-download/hakuneko) to download manga first 
-before convert the images into single pdf._
+_p/s: download manga using [HakuNeko](https://github.com/manga-download/hakuneko) first, 
+before converting the downloaded images into single pdf._
 
 
 # Requirements
@@ -12,7 +12,7 @@ before convert the images into single pdf._
 
 # Setting up
 
-1. Copy `.env.example` to `.env` & modify its content 
+1. Copy `.env.example`'s content into `.env` & modify its content 
    ```
    cp .env.example .env
    ```
@@ -20,7 +20,7 @@ before convert the images into single pdf._
    ```
    pip install -r requirements.txt
    ```
-1. Run command to process images
+1. Execute script below to convert the images into pdf
    ```
    python app.py
    ```   
