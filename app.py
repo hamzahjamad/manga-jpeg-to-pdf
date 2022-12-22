@@ -11,9 +11,8 @@ is_using_humanized_chapter_title = is_using_humanized_chapter_title.lower() in (
 
 source_path = dir_path + manga_title + "/"
 
-
-for x in os.walk(source_path):
-    chapter_path = x[0] + "/"
+for directory_details in os.walk(source_path):
+    chapter_path = directory_details[0] + "/"
     chapter_folder_name = chapter_path.split("/")[-2:][0]
     chapter_title = pdf_title_generator(
         manga_title, 
