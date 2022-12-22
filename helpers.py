@@ -2,15 +2,15 @@ import os
 import re
 from PIL import Image
 
-def chapter_folder_to_human_language_transformer(chapter_folder):
+def chapter_directory_to_human_language_transformer(chapter_directory):
     # get the Ch.XXX pattern
 
     result = None
     try:
-        result = re.search('(Ch.[0-9]+)', chapter_folder).group(1)
+        result = re.search('(Ch.[0-9]+)', chapter_directory).group(1)
         result = result.replace("Ch.", "Chapter ")
 
-        chapter_number_original = re.search('([0-9]+)', chapter_folder).group(1)
+        chapter_number_original = re.search('([0-9]+)', chapter_directory).group(1)
         chapter_number = int(chapter_number_original) # remove prefix 0 infront of number
         chapter_number = str(chapter_number)
 
@@ -20,14 +20,14 @@ def chapter_folder_to_human_language_transformer(chapter_folder):
 
     return result
 
-def pdf_title_generator(manga_title, chapter_folder, is_using_humanized_chapter_title):
+def pdf_title_generator(manga_title, chapter_directory, is_using_humanized_chapter_title):
     chapter_title = None
     result = None
 
     if is_using_humanized_chapter_title:
-       chapter_title = chapter_folder_to_human_language_transformer(chapter_folder)
+       chapter_title = chapter_directory_to_human_language_transformer(chapter_directory)
     else:
-       chapter_title = chapter_folder
+       chapter_title = chapter_directory
 
     if chapter_title is None or chapter_title == "":
         result = None
