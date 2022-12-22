@@ -1,6 +1,8 @@
 # About
 Convert manga images into a single pdf. 
-Can use [HakuNeko](https://github.com/manga-download/hakuneko) to download manga.
+
+_p/s: use [HakuNeko](https://github.com/manga-download/hakuneko) to download manga first 
+before convert the images into single pdf._
 
 
 # Requirements
