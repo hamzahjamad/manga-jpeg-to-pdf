@@ -10,15 +10,15 @@ Can use [HakuNeko](https://github.com/manga-download/hakuneko) to download manga
 
 # Setting up
 
-- copy .env.example to .env & modify it's content 
+1. Copy `.env.example` to `.env` & modify its content 
    ```
    cp .env.example .env
    ```
-- install requirements.txt
+1. Install requirements.txt
    ```
-   pip install -r requirments.txt
+   pip install -r requirements.txt
    ```
-- run command to process images
+1. Run command to process images
    ```
    python app.py
    ```   
