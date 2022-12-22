@@ -20,12 +20,21 @@ def chapter_folder_to_human_language_transformer(chapter_folder):
 
     return result
 
-def pdf_title_generator(manga_title, chapter_folder):
-    chapter_title = chapter_folder_to_human_language_transformer(chapter_folder)
-    if chapter_title is None:
-        return None
+def pdf_title_generator(manga_title, chapter_folder, is_using_humanized_chapter_title):
+    chapter_title = None
+    result = None
 
-    return manga_title + " " + chapter_title + ".pdf"
+    if is_using_humanized_chapter_title:
+       chapter_title = chapter_folder_to_human_language_transformer(chapter_folder)
+    else:
+       chapter_title = chapter_folder
+
+    if chapter_title is None or chapter_title == "":
+        result = None
+    else: 
+        result = manga_title + " " + chapter_title + ".pdf"      
+
+    return result
 
 def pdf_file_generator(source_path, chapter_title):
     res = []
