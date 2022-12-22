@@ -5,7 +5,7 @@ from PIL import Image
 def get_all_chapters_path(chapters):
     return [item[0].split("/")[-1:][0] for item in chapters]
 
-def move_to_last_chapters(all_items, last_chapter):
+def move_to_after_last_processed_chapter(all_items, last_chapter):
     all_chapters = get_all_chapters_path(all_items)
     index_last_chapter = all_chapters.index(last_chapter)
 
@@ -41,7 +41,7 @@ def pdf_title_generator(manga_title, chapter_directory, is_using_humanized_chapt
     if chapter_title is None or chapter_title == "":
         result = None
     else: 
-        result = manga_title + " " + chapter_title + ".pdf"      
+        result = manga_title + " - " + chapter_title + ".pdf"      
 
     return result
 
